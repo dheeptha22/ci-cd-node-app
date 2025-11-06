@@ -27,12 +27,20 @@ jobs:
       - name: Build Docker image
         run: docker build -t ci-cd-node-app .
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy to Railway
-        uses: railwayapp/action-deploy@v2
-        with:
-          serviceId: ${{ secrets.RAILWAY_SERVICE_ID }}
-          railwayToken: ${{ secrets.RAILWAY_API_KEY }}
+ deploy:
+  needs: build
+  runs-on: ubuntu-latest
+  steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Install Railway CLI
+      run: npm install -g railway
+
+    - name: Deploy to Railway
+      env:
+        RAILWAY_API_KEY: ${{ secrets.RAILWAY_API_KEY }}
+        RAILWAY_SERVICE_ID: ${{ secrets.RAILWAY_SERVICE_ID }}
+      run: |
+        railway login --apiKey $RAILWAY_API_KEY
+        railway up --serviceId $RAILWAY_SERVICE_ID --yes
