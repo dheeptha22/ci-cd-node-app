@@ -1,39 +1,85 @@
 body {
   font-family: Arial, sans-serif;
-  background: #f2f2f2;
+  background: #ffffff; /* White background */
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  margin: 0;
 }
 
 .container {
-  background: #fff;
-  padding: 20px 30px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  background: #e6e0ff; /* Light purple box */
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  width: 400px;
 }
 
 h1 {
   text-align: center;
+  color: #4b0082;
+  margin-bottom: 20px;
 }
 
-form input[type="text"] {
-  width: 70%;
-  padding: 10px;
-  margin-right: 5px;
+.form-add {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
-form button {
+.form-add input[type="text"] {
+  flex: 1;
   padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.form-add button {
+  padding: 10px 15px;
+  margin-left: 5px;
+  background: #4b0082;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
 ul {
   list-style: none;
   padding: 0;
-  margin-top: 20px;
 }
 
-li {
+li.task {
+  background: #fff;
+  padding: 10px 12px;
+  border-radius: 6px;
   margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+li.task.done span {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.tick-btn {
+  background: #32cd32; /* Green tick button */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 8px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.del-btn {
+  background: #ff4d4d; /* Red delete button */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 8px;
+  cursor: pointer;
 }

@@ -7,20 +7,24 @@
 </head>
 <body>
   <div class="container">
-    <h1>To-Do List</h1>
+    <h1>📝 To-Do List</h1>
     
-    <form action="/add" method="POST">
-      <input type="text" name="task" placeholder="Enter a task" required>
+    <form action="/add" method="POST" class="form-add">
+      <input type="text" name="task" placeholder="Enter a new task" required>
       <button type="submit">Add</button>
     </form>
 
     <ul>
       <% todos.forEach((task, index) => { %>
-        <li>
-          <form action="/delete" method="POST" style="display:inline">
-            <%= task %>
+        <li class="task <%= task.done ? 'done' : '' %>">
+          <form action="/toggle" method="POST" style="display:inline">
             <input type="hidden" name="index" value="<%= index %>">
-            <button type="submit">Delete</button>
+            <button type="submit" class="tick-btn">✔</button>
+          </form>
+          <span><%= task.text %></span>
+          <form action="/delete" method="POST" style="display:inline">
+            <input type="hidden" name="index" value="<%= index %>">
+            <button type="submit" class="del-btn">🗑</button>
           </form>
         </li>
       <% }) %>
