@@ -1,0 +1,16 @@
+{
+  "name": "ci-cd-node-app",
+  "version": "1.0.0",
+  "description": "A simple Node.js app with CI/CD using GitHub Actions and Railway",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"✅ Test passed!\""
+  },
+  "keywords": ["nodejs", "ci-cd", "github-actions", "railway"],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
