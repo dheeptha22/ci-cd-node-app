@@ -34,4 +34,5 @@ docker run -p 3000:3000 ci-cd-node-app
 ```
 ✅ Server started on port 3000
 🚀 Hello from CI/CD Node.js App!
+project is live
 ```

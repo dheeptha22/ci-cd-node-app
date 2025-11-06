@@ -1,15 +1,32 @@
-const express = require('express');
+const express = require("express");
+const bodyParser = require("body-parser");
 const app = express();
+
 const PORT = process.env.PORT || 3000;
 
-app.get('/', (req, res) => {
-  res.send('🚀 Hello from CI/CD Node.js App!');
+// Middleware
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static("public"));
+app.set("view engine", "ejs");
+
+// In-memory to-do list
+let todoList = [];
+
+// Routes
+app.get("/", (req, res) => {
+  res.render("index", { todos: todoList });
 });
 
-app.get('/health', (req, res) => {
-  res.json({ status: 'ok', message: 'Server running fine!' });
+app.post("/add", (req, res) => {
+  const task = req.body.task;
+  if (task) todoList.push(task);
+  res.redirect("/");
 });
 
-app.listen(PORT, () => {
-  console.log(`✅ Server started on port ${PORT}`);
+app.post("/delete", (req, res) => {
+  const index = req.body.index;
+  todoList.splice(index, 1);
+  res.redirect("/");
 });
+
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
