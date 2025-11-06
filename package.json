@@ -7,10 +7,16 @@
     "start": "node index.js",
     "test": "echo \"✅ Test passed!\""
   },
-  "keywords": ["nodejs", "ci-cd", "github-actions", "railway"],
+  "keywords": [
+    "nodejs",
+    "ci-cd",
+    "github-actions",
+    "railway"
+  ],
   "author": "Your Name",
   "license": "MIT",
   "dependencies": {
+    "ejs": "^3.1.10",
     "express": "^4.18.2"
   }
 }
