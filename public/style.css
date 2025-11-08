@@ -1,85 +1,106 @@
+/* Global Styles */
 body {
-  font-family: Arial, sans-serif;
-  background: #ffffff; /* White background */
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   min-height: 100vh;
-  margin: 0;
+  padding-top: 50px;
 }
 
+/* Container */
 .container {
-  background: #e6e0ff; /* Light purple box */
-  padding: 30px 40px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  background-color: #e3d7ff; /* Light purple */
+  padding: 30px;
+  border-radius: 15px;
   width: 400px;
-}
-
-h1 {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
   text-align: center;
-  color: #4b0082;
-  margin-bottom: 20px;
 }
 
+/* Header */
+h1 {
+  margin-bottom: 20px;
+  color: #4b0082; /* Dark purple */
+}
+
+/* Add Task Form */
 .form-add {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin-bottom: 20px;
 }
 
-.form-add input[type="text"] {
-  flex: 1;
+.form-add input {
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  width: 70%;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  outline: none;
 }
 
 .form-add button {
   padding: 10px 15px;
-  margin-left: 5px;
-  background: #4b0082;
-  color: white;
   border: none;
-  border-radius: 6px;
+  background-color: #4b0082;
+  color: white;
+  font-weight: bold;
+  border-radius: 0 5px 5px 0;
   cursor: pointer;
+  transition: background 0.3s;
 }
 
-ul {
+.form-add button:hover {
+  background-color: #6a0dad;
+}
+
+/* Task List */
+.todo-list {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
-li.task {
-  background: #fff;
-  padding: 10px 12px;
-  border-radius: 6px;
-  margin-bottom: 10px;
+.task {
+  background-color: white;
+  margin: 8px 0;
+  padding: 10px 15px;
+  border-radius: 10px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s;
 }
 
-li.task.done span {
+.task.done span {
   text-decoration: line-through;
-  color: #888;
+  color: gray;
+  opacity: 0.7;
 }
 
-.tick-btn {
-  background: #32cd32; /* Green tick button */
-  color: white;
-  border: none;
-  border-radius: 6px;
-  padding: 5px 8px;
-  cursor: pointer;
-  margin-right: 10px;
+/* Inline forms for buttons */
+.inline-form {
+  display: inline;
+  margin: 0 5px;
 }
 
-.del-btn {
-  background: #ff4d4d; /* Red delete button */
-  color: white;
+.tick-btn, .del-btn {
+  background: none;
   border: none;
-  border-radius: 6px;
-  padding: 5px 8px;
   cursor: pointer;
+  font-size: 18px;
+  transition: transform 0.2s;
+}
+
+.tick-btn:hover, .del-btn:hover {
+  transform: scale(1.2);
+}
+
+/* Task text */
+.task span {
+  flex-grow: 1;
+  margin-left: 10px;
+  text-align: left;
 }

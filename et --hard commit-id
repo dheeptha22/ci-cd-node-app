@@ -1,0 +1,14 @@
+[33mab51da3[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m Add professional login page and update styles
+[33mf579ee6[m Updated UI to professional design
+[33m6d0d8dd[m Trigger CI/CD workflow
+[33mdff1d84[m Add full CI/CD workflow for Railway deployment
+[33m633e775[m Add complete CI/CD workflow for Railway
+[33mea79bbc[m Styled user page with modern design
+[33m1eb54d2[m Trigger CI/CD deployment
+[33mf22e1a6[m Convert To-Do app to user-specific version
+[33m62a2f32[m Upgrade To-Do app
+[33m3f0e5cb[m Add EJS dependency
+[33m6ba79be[m Convert app into To-Do List web app
+[33m1a27eb5[m Add CI/CD workflow with Railway CLI
+[33m61a0a7b[m Update deploy job to use Railway CLI
+[33mb6cf8d4[m Initial commit
